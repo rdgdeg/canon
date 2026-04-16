@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { AddToCalendarButtons } from "@/components/AddToCalendarButtons";
 import type { ProgrammeDay } from "@/lib/programme";
 import { CONTACTS, PROGRAMME } from "@/lib/programme";
 
@@ -209,6 +210,14 @@ export function Programme() {
                                 {renderTextWithPhones(it.details)}
                               </p>
                             ) : null}
+                            <AddToCalendarButtons
+                              title={it.title}
+                              description={it.description}
+                              details={it.details}
+                              startDateTime={it.startDateTime}
+                              endDateTime={it.endDateTime}
+                              location="ATH — Faubourg de Tournai"
+                            />
 
                             {day.key === "sam" &&
                             it.title.includes("Souper animé") ? (
