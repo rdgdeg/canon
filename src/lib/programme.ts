@@ -1,3 +1,12 @@
+/** Bloc structuré pour repas / menu (affichage multi-lignes + tél. séparé). */
+export type MealBlock = {
+  menu: string[];
+  prices?: string;
+  /** Numéro affiché tel quel (ex. 0478/91.03.68) */
+  reservation?: string;
+  note?: string;
+};
+
 export type ProgrammeItem = {
   time: string;
   title: string;
@@ -6,6 +15,7 @@ export type ProgrammeItem = {
   startDateTime: string;
   endDateTime: string;
   badge?: "gratuit" | "repas" | "brocante" | "course";
+  meal?: MealBlock;
 };
 
 export type ProgrammeDay = {
@@ -14,6 +24,11 @@ export type ProgrammeDay = {
   dateLabel: string;
   items: ProgrammeItem[];
 };
+
+export const CONTACTS = {
+  reservations: "0478/91.03.68",
+  brocante: "0473/31.80.09",
+} as const;
 
 export const PROGRAMME: ProgrammeDay[] = [
   {
@@ -60,11 +75,17 @@ export const PROGRAMME: ProgrammeDay[] = [
         title: "Souper animé par FRISKO et Jordan Emile DUBOIS",
         description:
           "Soirée repas et animation musicale, idéale pour se retrouver entre amis et en famille.",
-        details:
-          "Menu : filet pur de porc (sauce archiduc ou blackwell) – frites – salade composée, ou américain – frites – salade composée. Prix : adultes 18 € / enfants 12 €. Réservations : 0478/91.03.68",
         startDateTime: "2026-07-11T19:00:00",
         endDateTime: "2026-07-11T20:30:00",
         badge: "repas",
+        meal: {
+          menu: [
+            "Filet pur de porc (sauce archiduc ou blackwell), frites, salade composée",
+            "Américain, frites, salade composée",
+          ],
+          prices: "Adultes 18 € · Enfants 12 €",
+          reservation: CONTACTS.reservations,
+        },
       },
       {
         time: "20h30",
@@ -106,11 +127,14 @@ export const PROGRAMME: ProgrammeDay[] = [
         time: "12h00",
         title: "Repas sous chapiteau",
         description: "Repas convivial du midi sous chapiteau.",
-        details:
-          "Assiette froide avec frites 13 €. Réservations : 0478/91.03.68",
         startDateTime: "2026-07-12T12:00:00",
         endDateTime: "2026-07-12T14:00:00",
         badge: "repas",
+        meal: {
+          menu: ["Assiette froide avec frites"],
+          prices: "13 €",
+          reservation: CONTACTS.reservations,
+        },
       },
       {
         time: "15h00",
@@ -164,8 +188,20 @@ export const PROGRAMME: ProgrammeDay[] = [
   },
 ];
 
-export const CONTACTS = {
-  reservations: "0478/91.03.68",
-  brocante: "0473/31.80.09",
-};
+/** Texte détaillé pour export agenda (Google / .ics). */
+export function programmeItemDetailsForCalendar(
+  item: ProgrammeItem,
+): string | undefined {
+  if (item.meal) {
+    const parts: string[] = [];
+    if (item.meal.note) parts.push(item.meal.note);
+    parts.push(...item.meal.menu);
+    if (item.meal.prices) parts.push(item.meal.prices);
+    if (item.meal.reservation) {
+      parts.push(`Réservations : ${item.meal.reservation}`);
+    }
+    return parts.join("\n");
+  }
+  return item.details;
+}
 

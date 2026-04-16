@@ -9,6 +9,55 @@ type AddToCalendarButtonsProps = {
   location?: string;
 };
 
+function IconGoogleCalendar({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      width={14}
+      height={14}
+      aria-hidden
+    >
+      <path
+        fill="#4285F4"
+        d="M18 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"
+      />
+      <path fill="#fff" d="M18 6v2H6V6h12Z" opacity={0.25} />
+      <path
+        fill="#fff"
+        d="M8 2v4M16 2v4M4 10h16"
+        stroke="#fff"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+      />
+      <rect x={7} y={12} width={3} height={3} rx={0.5} fill="#EA4335" />
+      <rect x={11} y={12} width={3} height={3} rx={0.5} fill="#FBBC04" />
+      <rect x={15} y={12} width={2} height={3} rx={0.5} fill="#34A853" />
+    </svg>
+  );
+}
+
+function IconCalendarPlus({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      width={14}
+      height={14}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.85}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <rect x={3} y={4} width={18} height={18} rx={2} />
+      <path d="M16 2v4M8 2v4M3 10h18" />
+      <path d="M12 14v6M9 17h6" />
+    </svg>
+  );
+}
+
 function formatGoogleDate(date: Date) {
   const y = date.getFullYear();
   const m = String(date.getMonth() + 1).padStart(2, "0");
@@ -88,24 +137,32 @@ export function AddToCalendarButtons({
     URL.revokeObjectURL(url);
   };
 
+  const btnBase =
+    "inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] font-medium leading-tight ring-1 transition hover:bg-slate-50";
+
   return (
-    <div className="mt-3 flex flex-wrap gap-2">
+    <div className="mt-1.5 flex flex-wrap gap-1.5">
       <a
         href={googleUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-300 transition hover:bg-slate-50"
+        aria-label="Ajouter à Google Agenda"
+        title="Ajouter à Google Agenda"
+        className={`${btnBase} bg-white text-slate-700 ring-slate-200 hover:ring-slate-300`}
       >
-        Ajouter Google
+        <IconGoogleCalendar className="shrink-0" />
+        <span>Google</span>
       </a>
       <button
         type="button"
         onClick={onDownloadIcs}
-        className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-300 transition hover:bg-slate-200"
+        aria-label="Télécharger le fichier calendrier .ics pour Apple ou Outlook"
+        title="Télécharger le fichier .ics (Apple Calendar, Outlook, etc.)"
+        className={`${btnBase} bg-white text-slate-700 ring-slate-200 hover:ring-slate-300`}
       >
-        Ajouter Apple / Outlook
+        <IconCalendarPlus className="shrink-0 text-slate-500" />
+        <span>.ics</span>
       </button>
     </div>
   );
 }
-

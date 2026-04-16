@@ -111,49 +111,6 @@ export default function Home() {
                   </a>
                 ))}
               </div>
-
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                <div className="rounded-2xl bg-white/80 p-4 ring-1 ring-sky-100 backdrop-blur">
-                  <p className="text-xs uppercase tracking-wide text-slate-500">
-                    Lieu
-                  </p>
-                  <p className="mt-1 text-sm font-semibold">
-                    ATH — Faubourg de Tournai
-                  </p>
-                </div>
-                <div className="rounded-2xl bg-white/80 p-4 ring-1 ring-sky-100 backdrop-blur">
-                  <p className="text-xs uppercase tracking-wide text-slate-500">
-                    Point fort
-                  </p>
-                  <p className="mt-1 text-sm font-semibold">Cortège + rondeau</p>
-                </div>
-                <div className="rounded-2xl bg-white/80 p-4 ring-1 ring-sky-100 backdrop-blur">
-                  <p className="text-xs uppercase tracking-wide text-slate-500">
-                    Ambiance
-                  </p>
-                  <p className="mt-1 text-sm font-semibold">
-                    Soirées & animations
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-4 inline-flex items-center gap-3 rounded-2xl bg-white/85 p-3 ring-1 ring-sky-100">
-                <Image
-                  src="/logo-les-francs.png"
-                  alt="Logo Société Royale Les Francs de Bruges"
-                  width={96}
-                  height={96}
-                  className="h-16 w-16 rounded-lg object-cover ring-1 ring-slate-200"
-                />
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-slate-500">
-                    Organisé par
-                  </p>
-                  <p className="font-display text-lg font-bold text-slate-900">
-                    Les Francs de Bruges
-                  </p>
-                </div>
-              </div>
             </div>
 
             <div
