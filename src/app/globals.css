@@ -32,7 +32,8 @@ body {
 
 .bg-blobs {
   position: absolute;
-  inset: -80px;
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
   filter: blur(44px);
   opacity: 0.9;

@@ -6,7 +6,7 @@ import { PROGRAMME } from "@/lib/programme";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#f6fbff] text-slate-900">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#f6fbff] text-slate-900">
       <div className="bg-blobs" aria-hidden="true">
         <div className="blob b1" />
         <div className="blob b2" />
@@ -14,8 +14,11 @@ export default function Home() {
       </div>
 
       <header className="sticky top-0 z-20 border-b border-sky-100/80 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <a href="#" className="group inline-flex items-center gap-2">
+        <div className="mx-auto flex min-w-0 max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6">
+          <a
+            href="#"
+            className="group inline-flex min-w-0 flex-1 items-center gap-2 sm:flex-none"
+          >
             <span className="inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-white ring-1 ring-sky-200">
               <Image
                 src="/logo-les-francs.png"
@@ -25,11 +28,11 @@ export default function Home() {
                 className="h-full w-full object-cover"
               />
             </span>
-            <span className="leading-tight">
-              <span className="block text-sm font-semibold">
+            <span className="min-w-0 leading-tight">
+              <span className="block truncate text-sm font-semibold">
                 Ducasse du Canon
               </span>
-              <span className="block text-xs text-slate-500">
+              <span className="block truncate text-xs text-slate-500">
                 ATH · Faubourg de Tournai
               </span>
             </span>
@@ -58,24 +61,24 @@ export default function Home() {
 
           <a
             href="#programme"
-            className="rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:translate-y-[-1px] hover:brightness-105"
+            className="shrink-0 whitespace-nowrap rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:translate-y-[-1px] hover:brightness-105 sm:px-4"
           >
             Voir le programme
           </a>
         </div>
       </header>
 
-      <main className="relative">
+      <main className="relative min-w-0 overflow-x-hidden">
         <section className="mx-auto max-w-6xl px-4 pb-10 pt-10 sm:px-6 sm:pt-14">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <p className="inline-flex items-center gap-2 rounded-full bg-white/75 px-3 py-1.5 text-xs font-semibold tracking-wide text-slate-700 ring-1 ring-sky-100">
+              <p className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full bg-white/75 px-3 py-1.5 text-xs font-semibold tracking-wide text-slate-700 ring-1 ring-sky-100">
                 10 · 11 · 12 · 13 juillet 2026
                 <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
                 Entrées gratuites sur plusieurs activités
               </p>
 
-              <h1 className="font-display mt-5 text-balance text-4xl font-bold tracking-tight sm:text-6xl">
+              <h1 className="font-display mt-5 break-words text-balance text-4xl font-bold tracking-tight sm:text-6xl">
                 113ème Ducasse du Canon
               </h1>
               <p className="mt-3 max-w-2xl text-pretty text-base leading-7 text-slate-700 sm:text-lg">

@@ -55,7 +55,7 @@ function IconPhone({ className }: { className?: string }) {
 
 function MealDetailsCard({ meal }: { meal: MealBlock }) {
   return (
-    <div className="mt-3 max-w-xl overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-900/[0.06] ring-1 ring-slate-200/90">
+    <div className="mt-3 max-w-full overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-900/[0.06] ring-1 ring-slate-200/90 sm:max-w-xl">
       <div
         className="h-1 w-full bg-gradient-to-r from-teal-500 via-cyan-500 to-sky-500"
         aria-hidden
@@ -223,7 +223,7 @@ function dayTheme(dayKey: ProgrammeDay["key"]) {
 export function Programme() {
 
   return (
-    <section id="programme" className="scroll-mt-24">
+    <section id="programme" className="min-w-0 scroll-mt-24">
       <div>
         <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900">
           Programme
@@ -254,8 +254,8 @@ export function Programme() {
         </div>
       </div>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
-        <div className="space-y-4">
+      <div className="mt-6 grid min-w-0 gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+        <div className="min-w-0 space-y-4">
           {PROGRAMME.map((day) => {
             const theme = dayTheme(day.key);
             return (
@@ -289,8 +289,8 @@ export function Programme() {
                         .filter(Boolean)
                         .join(" ")}
                     >
-                      <div className="grid gap-3 sm:grid-cols-[112px_1fr]">
-                        <div className="sm:pt-0.5">
+                      <div className="grid min-w-0 gap-3 sm:grid-cols-[112px_1fr]">
+                        <div className="min-w-0 sm:pt-0.5">
                           <span
                             className={[
                               "inline-flex w-fit min-w-[94px] items-center justify-center rounded-xl bg-gradient-to-r px-3 py-2 text-sm font-extrabold tracking-wide text-white shadow-sm",
@@ -301,11 +301,11 @@ export function Programme() {
                           </span>
                         </div>
 
-                        <div className="flex items-start gap-3">
+                        <div className="flex min-w-0 items-start gap-3">
                           <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500 shadow-[0_0_0_4px_rgba(6,182,212,0.15)]" />
-                          <div className="w-full">
+                          <div className="min-w-0 flex-1">
                             <div className="flex flex-wrap items-center gap-2">
-                              <p className="text-base font-semibold text-slate-900">
+                              <p className="min-w-0 break-words text-base font-semibold text-slate-900">
                                 {it.title}
                               </p>
                               {it.badge ? (
@@ -363,7 +363,7 @@ export function Programme() {
           })}
         </div>
 
-        <aside className="flex flex-col gap-4 lg:sticky lg:top-24 lg:self-start">
+        <aside className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-24 lg:self-start">
           <div
             id="infos"
             className="scroll-mt-24 rounded-2xl bg-white/85 p-5 ring-1 ring-slate-200 backdrop-blur"

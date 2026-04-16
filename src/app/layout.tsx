@@ -38,7 +38,10 @@ export default function RootLayout({
       lang="fr"
       className={`${montserrat.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body suppressHydrationWarning className="min-h-full flex flex-col">
+      <body
+        suppressHydrationWarning
+        className="flex min-h-full min-w-0 flex-col"
+      >
         {children}
       </body>
     </html>

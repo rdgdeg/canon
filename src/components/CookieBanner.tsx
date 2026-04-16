@@ -27,8 +27,8 @@ export function CookieBanner() {
 
   return (
     <div className="fixed inset-x-0 bottom-4 z-40 px-4 sm:px-6">
-      <div className="mx-auto flex w-full max-w-4xl flex-col gap-3 rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl shadow-slate-900/10 backdrop-blur sm:flex-row sm:items-end sm:justify-between">
-        <div>
+      <div className="mx-auto flex w-full min-w-0 max-w-4xl flex-col gap-3 rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl shadow-slate-900/10 backdrop-blur sm:flex-row sm:items-end sm:justify-between">
+        <div className="min-w-0">
           <p className="font-display text-base font-bold text-slate-900">
             Ce site utilise des cookies
           </p>
