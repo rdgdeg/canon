@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Ducasse du Canon — ATH",
     description:
       "Programme des festivités — 10, 11, 12 et 13 juillet 2026 (Faubourg de Tournai, Ath).",
-    images: [{ url: "/affiche.png", width: 1600, height: 2048, alt: "Affiche" }],
+    images: [{ url: "/affiche.png", width: 723, height: 1024, alt: "Affiche" }],
     type: "website",
     locale: "fr_BE",
   },

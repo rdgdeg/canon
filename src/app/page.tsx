@@ -124,8 +124,8 @@ export default function Home() {
                 <Image
                   src="/affiche.png"
                   alt="Affiche de la Ducasse du Canon"
-                  width={1200}
-                  height={1600}
+                  width={723}
+                  height={1024}
                   priority
                   className="h-auto w-full"
                 />
