@@ -54,6 +54,16 @@ export const PROGRAMME: ProgrammeDay[] = [
         endDateTime: "2026-07-11T02:00:00",
         badge: "gratuit",
       },
+      {
+        time: "21h00 → 23h00",
+        title: "LAURENT BAERT en live",
+        description:
+          "Concert de Laurent Baert pour rythmer la soirée d'ouverture.",
+        details: "Entrée gratuite.",
+        startDateTime: "2026-07-10T21:00:00",
+        endDateTime: "2026-07-10T23:00:00",
+        badge: "gratuit",
+      },
     ],
   },
   {
@@ -93,7 +103,7 @@ export const PROGRAMME: ProgrammeDay[] = [
         description:
           "Animation conviviale ouverte à tous, avec de nombreuses manches dans la soirée.",
         details:
-          "Venez tenter votre chance : de nombreux lots à gagner pendant toute la soirée, dans une ambiance fun et accessible à tous.",
+          "Nombreux lots à gagner, dont un séjour à Disney et 2 abonnements à Pairi Daiza.",
         startDateTime: "2026-07-11T20:30:00",
         endDateTime: "2026-07-11T23:45:00",
       },
@@ -164,15 +174,6 @@ export const PROGRAMME: ProgrammeDay[] = [
     label: "Lundi",
     dateLabel: "13 juillet 2026",
     items: [
-      {
-        time: "15h00",
-        title: "53ème Grand Prix des Vétérans",
-        description: "Épreuve populaire à la Place de la Libération.",
-        details: "Lieu : Place de la Libération.",
-        startDateTime: "2026-07-13T15:00:00",
-        endDateTime: "2026-07-13T18:00:00",
-        badge: "course",
-      },
       {
         time: "19h00",
         title:

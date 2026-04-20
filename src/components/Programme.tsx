@@ -400,21 +400,21 @@ export function Programme() {
               À ne pas rater
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-slate-700">
-              <li className="flex items-center justify-between rounded-xl bg-white px-4 py-3 ring-1 ring-sky-100">
-                <span>Soirée HOLIDAY&apos;S NIGHT</span>
-                <span className="text-slate-900">Ven 20h00</span>
+              <li className="flex items-center justify-between gap-3 rounded-xl bg-white px-4 py-3 ring-1 ring-sky-100">
+                <span>Holiday&apos;s Night + Laurent Baert</span>
+                <span className="shrink-0 text-slate-900">Ven 20h00</span>
               </li>
-              <li className="flex items-center justify-between rounded-xl bg-white px-4 py-3 ring-1 ring-sky-100">
+              <li className="flex items-center justify-between gap-3 rounded-xl bg-white px-4 py-3 ring-1 ring-sky-100">
                 <span>Souper animé</span>
-                <span className="text-slate-900">Sam 19h00</span>
+                <span className="shrink-0 text-slate-900">Sam 19h00</span>
               </li>
-              <li className="flex items-center justify-between rounded-xl bg-white px-4 py-3 ring-1 ring-sky-100">
-                <span>Bingo (nombreux lots)</span>
-                <span className="text-slate-900">Sam 20h30</span>
+              <li className="flex items-center justify-between gap-3 rounded-xl bg-white px-4 py-3 ring-1 ring-sky-100">
+                <span>Bingo : Disney &amp; Pairi Daiza à gagner</span>
+                <span className="shrink-0 text-slate-900">Sam 20h30</span>
               </li>
-              <li className="flex items-center justify-between rounded-xl bg-white px-4 py-3 ring-1 ring-sky-100">
+              <li className="flex items-center justify-between gap-3 rounded-xl bg-white px-4 py-3 ring-1 ring-sky-100">
                 <span>Cortège + rondeau</span>
-                <span className="text-slate-900">Dim 15h00</span>
+                <span className="shrink-0 text-slate-900">Dim 15h00</span>
               </li>
             </ul>
           </div>
