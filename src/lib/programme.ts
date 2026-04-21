@@ -30,6 +30,11 @@ export const CONTACTS = {
   brocante: "0473/31.80.09",
 } as const;
 
+export const PAYMENT_IBAN = "BE04 0683 2999 7131";
+
+export const PAYMENT_CONFIRMATION_NOTE =
+  "Le paiement sur le compte BE04 0683 2999 7131 fera office de confirmation pour les repas de samedi soir et dimanche midi.";
+
 export const PROGRAMME: ProgrammeDay[] = [
   {
     key: "ven",
@@ -95,6 +100,7 @@ export const PROGRAMME: ProgrammeDay[] = [
           ],
           prices: "Adultes 18 € · Enfants 12 €",
           reservation: CONTACTS.reservations,
+          note: PAYMENT_CONFIRMATION_NOTE,
         },
       },
       {
@@ -144,6 +150,7 @@ export const PROGRAMME: ProgrammeDay[] = [
           menu: ["Assiette froide avec frites"],
           prices: "13 €",
           reservation: CONTACTS.reservations,
+          note: PAYMENT_CONFIRMATION_NOTE,
         },
       },
       {

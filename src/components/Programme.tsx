@@ -5,6 +5,8 @@ import { AddToCalendarButtons } from "@/components/AddToCalendarButtons";
 import type { MealBlock, ProgrammeDay } from "@/lib/programme";
 import {
   CONTACTS,
+  PAYMENT_CONFIRMATION_NOTE,
+  PAYMENT_IBAN,
   PROGRAMME,
   programmeItemDetailsForCalendar,
 } from "@/lib/programme";
@@ -391,6 +393,17 @@ export function Programme() {
                 >
                   {CONTACTS.brocante}
                 </a>
+              </div>
+              <div className="rounded-xl bg-cyan-50 p-4 ring-1 ring-cyan-200">
+                <p className="text-xs uppercase tracking-wide text-cyan-700">
+                  Confirmation repas
+                </p>
+                <p className="mt-1 text-sm leading-6 text-slate-700">
+                  {PAYMENT_CONFIRMATION_NOTE}
+                </p>
+                <p className="mt-2 font-display text-sm font-semibold text-slate-900">
+                  Compte : {PAYMENT_IBAN}
+                </p>
               </div>
             </div>
           </div>
